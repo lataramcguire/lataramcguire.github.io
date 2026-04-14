@@ -692,7 +692,7 @@ health</p>
       </div>
       <div class="rv d2">
         <div class="yt-wrap">
-          <iframe src="https://www.youtube.com/embed/KyV6W_FHVZ4?rel=0&modestbranding=1&color=white" title="Inspiration Music — Latara McGuire Portfolio" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/watch?v=yI9LQKvrVcQ&list=RDyI9LQKvrVcQ&start_radio=1" title="Inspiration Music — Latara McGuire Portfolio" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="yt-lbl"><div class="yt-dot"></div>Playing via YouTube · Use player controls for volume</div>
       </div>
@@ -728,26 +728,6 @@ health</p>
   <div class="ft">lataramcguire@gmail.com</div>
 </footer>
 
-<script>
-/* cursor */
-const cD=document.getElementById('cD'),cR=document.getElementById('cR');
-document.addEventListener('mousemove',e=>{cD.style.left=e.clientX+'px';cD.style.top=e.clientY+'px';cR.style.left=e.clientX+'px';cR.style.top=e.clientY+'px'});
-document.querySelectorAll('a,button,.val-row,.cc,.exc,.iss-hdr,.ptab,.afc,.ccard').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cR.style.width='48px';cR.style.height='48px';cR.style.borderColor='var(--gold-lt)';cD.style.background='var(--gold-lt)';cD.style.transform='translate(-50%,-50%) scale(1.5)'});
-  el.addEventListener('mouseleave',()=>{cR.style.width='32px';cR.style.height='32px';cR.style.borderColor='var(--gold)';cD.style.background='var(--gold)';cD.style.transform='translate(-50%,-50%) scale(1)'});
-});
-/* nav shrink */
-window.addEventListener('scroll',()=>{document.getElementById('mNav').style.padding=window.scrollY>60?'.65rem 4rem':'1.2rem 4rem'});
-/* tabs */
-function pTab(e,id){document.querySelectorAll('.ppanel').forEach(p=>p.classList.remove('act'));document.querySelectorAll('.ptab').forEach(b=>b.classList.remove('act'));document.getElementById(id).classList.add('act');e.target.classList.add('act')}
-/* accordion */
-function togIss(h){const item=h.parentElement,body=item.querySelector('.iss-body'),isOpen=item.classList.contains('open');document.querySelectorAll('.iss-item').forEach(i=>{i.classList.remove('open');i.querySelector('.iss-body').style.maxHeight='0'});if(!isOpen){item.classList.add('open');body.style.maxHeight=body.scrollHeight+'px'}}
-/* scroll reveal */
-const rvO=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('up');rvO.unobserve(e.target)}})},{threshold:.08});
-document.querySelectorAll('.rv').forEach(el=>rvO.observe(el));
-/* skill bars */
-const skO=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.bfill').forEach(b=>{b.style.width=b.dataset.w});skO.unobserve(e.target)}})},{threshold:.2});
-const sg=document.getElementById('skGrid');if(sg)skO.observe(sg);
-</script>
+
 </body>
 </html>
