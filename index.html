@@ -127,6 +127,12 @@ h2.disp.wh em { color:var(--gold); }
 .miss-grid { display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3.5rem; }
 .miss-q { font-family:'Source Serif 4',serif;font-size:1.32rem;font-style:italic;line-height:1.8;color:var(--dark);border-left:4px solid var(--gold);padding-left:2rem;margin-bottom:2rem; }
 .miss-body { font-size:.9rem;color:var(--muted);line-height:1.85; }
+
+/* ── MISSION INLINE PHOTO ── */
+.miss-inline-photo { margin-top:1.5rem;border-radius:8px;overflow:hidden;position:relative;border:1px solid rgba(10,18,48,.1);box-shadow:0 8px 24px rgba(10,18,48,.1); }
+.miss-inline-photo img { width:100%;display:block;object-fit:cover;max-height:320px;object-position:center; }
+.miss-inline-cap { padding:.6rem .9rem;background:var(--ivory);font-size:.74rem;color:var(--muted);font-style:italic;border-top:1px solid rgba(10,18,48,.07); }
+
 .vals { display:flex;flex-direction:column;gap:.85rem; }
 .val-row { display:flex;align-items:flex-start;gap:1.1rem;background:#fff;border:1px solid rgba(10,18,48,.07);padding:1.15rem 1.45rem;border-radius:5px;transition:all .3s;cursor:default; }
 .val-row:hover { border-color:var(--blue-lt);transform:translateX(6px);box-shadow:0 4px 20px rgba(37,87,167,.1); }
@@ -232,6 +238,19 @@ h2.disp.wh em { color:var(--gold); }
 .scard li { font-size:.77rem;color:rgba(255,255,255,.48);padding-left:.9rem;position:relative;line-height:1.45; }
 .scard li::before { content:'›';position:absolute;left:0;color:var(--blue-lt); }
 
+/* ── SIDEBAR DOWNLOAD BUTTON ── */
+.sidebar-dl-btn {
+  display:flex;align-items:center;justify-content:center;gap:.6rem;
+  background:linear-gradient(135deg,var(--gold),var(--gold-lt));
+  color:var(--deep);
+  font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;
+  padding:.82rem 1.1rem;border-radius:4px;text-decoration:none;
+  transition:all .3s;cursor:none;
+  box-shadow:0 4px 14px rgba(212,170,112,.3);
+  border:none;
+}
+.sidebar-dl-btn:hover { background:linear-gradient(135deg,var(--gold-lt),var(--gold));transform:translateY(-2px);box-shadow:0 8px 22px rgba(212,170,112,.45); }
+
 /* ── EXEMPLARS ── */
 .ex-sec { background:var(--ivory-w); }
 .ex-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:3rem; }
@@ -243,10 +262,39 @@ h2.disp.wh em { color:var(--gold); }
 .exb { font-size:.84rem;color:var(--muted);line-height:1.75;margin-bottom:1.25rem;flex:1; }
 .extags { display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1.4rem; }
 .extag { background:rgba(37,87,167,.08);color:var(--blue);font-size:.67rem;padding:.2rem .54rem;border-radius:3px;font-weight:500; }
-.dl-btn { display:inline-flex;align-items:center;gap:.65rem;background:linear-gradient(135deg,var(--dark),var(--blue));color:#fff;padding:.72rem 1.3rem;border-radius:4px;text-decoration:none;font-size:.75rem;letter-spacing:.06em;font-weight:500;transition:all .3s;cursor:none;box-shadow:0 4px 12px rgba(10,18,48,.25);align-self:flex-start; }
+.dl-btn { display:inline-flex;align-items:center;gap:.65rem;background:linear-gradient(135deg,var(--dark),var(--blue));color:#fff;padding:.72rem 1.3rem;border-radius:4px;text-decoration:none;font-size:.75rem;letter-spacing:.06em;font-weight:500;transition:all .3s;cursor:none;box-shadow:0 4px 12px rgba(10,18,48,.25);align-self:flex-start;border:none; }
 .dl-btn:hover { transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,18,48,.35); }
 .dl-ic { font-size:1rem; }
-.ex-ph { border:2px dashed rgba(37,87,167,.2);border-radius:4px;padding:.85rem 1.15rem;display:flex;align-items:center;gap:.65rem;color:rgba(37,87,167,.5);font-size:.74rem; }
+
+/* ── LIGHTBOX ── */
+.lightbox-overlay {
+  display:none;position:fixed;inset:0;z-index:9000;
+  background:rgba(5,9,28,.92);backdrop-filter:blur(10px);
+  align-items:center;justify-content:center;padding:2rem;
+}
+.lightbox-overlay.active { display:flex; }
+.lightbox-box {
+  position:relative;max-width:900px;width:100%;
+  background:var(--dark);border:1px solid var(--border-g);border-radius:10px;
+  overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.6);
+}
+.lightbox-box img {
+  width:100%;display:block;max-height:80vh;object-fit:contain;
+  background:#000;
+}
+.lightbox-cap {
+  padding:.75rem 1.25rem;font-size:.78rem;color:rgba(255,255,255,.65);
+  font-style:italic;border-top:1px solid var(--border-g);
+  background:rgba(0,0,0,.3);
+}
+.lightbox-close {
+  position:absolute;top:.75rem;right:.9rem;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+  color:#fff;font-size:1.1rem;width:34px;height:34px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:all .2s;line-height:1;
+}
+.lightbox-close:hover { background:rgba(255,255,255,.2); }
 
 /* ── COMMUNITY ── */
 .comm-sec { background:var(--ivory); }
@@ -267,6 +315,12 @@ h2.disp.wh em { color:var(--gold); }
 .comm-photo-fallback { width:100%;aspect-ratio:16/10;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--ivory-w);border:2px dashed rgba(10,18,48,.12);border-radius:6px;gap:.5rem; }
 .comm-photo-fallback span:first-child { font-size:2rem;opacity:.25; }
 .comm-photo-fallback span:last-child { font-size:.68rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase; }
+
+/* ── SCHOLARLY PHOTO ── */
+.scholarly-photo { margin-top:1.4rem;border-radius:6px;overflow:hidden;border:1px solid rgba(10,18,48,.08);box-shadow:0 4px 16px rgba(10,18,48,.08); }
+.scholarly-photo img { width:100%;display:block;object-fit:cover;max-height:260px;transition:transform .5s ease; }
+.scholarly-photo:hover img { transform:scale(1.03); }
+.scholarly-photo-cap { padding:.6rem .9rem;font-size:.74rem;color:var(--muted);font-style:italic;border-top:1px solid rgba(10,18,48,.07);background:var(--ivory-w); }
 
 /* ── MUSIC ── */
 .music-sec { background:var(--deep);position:relative;overflow:hidden; }
@@ -336,6 +390,15 @@ footer { background:#030712;padding:1.5rem 4.5rem;display:flex;justify-content:s
 
 <div class="cur-d" id="cD"></div>
 <div class="cur-r" id="cR"></div>
+
+<!-- ── LIGHTBOX MODAL ── -->
+<div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox(event)">
+  <div class="lightbox-box">
+    <button class="lightbox-close" onclick="document.getElementById('lightboxOverlay').classList.remove('active')">✕</button>
+    <img id="lightboxImg" src="" alt="">
+    <div class="lightbox-cap" id="lightboxCap"></div>
+  </div>
+</div>
 
 <!-- NAV -->
 <nav id="mNav">
@@ -439,6 +502,15 @@ footer { background:#030712;padding:1.5rem 4.5rem;display:flex;justify-content:s
       <div class="rv d1">
         <p class="miss-q">"I advocate for data-driven and evidence-based practices, structured mentorship and leadership transition programs, ethical AI integration, and the interconnectedness of ambulatory and inpatient care — to improve community health outcomes for all."</p>
         <p class="miss-body">Experienced registered nurse with nine years of diverse experience in acute care, ambulatory, and travel nursing. Demonstrated leadership in training staff, workflow coordination, and patient care management. Proven ability to adapt quickly, while maintaining patient safety and quality outcomes. Currently pursuing MSN/MBA with a focus in healthcare management. Seeking a nurse manager or leadership role in staff development, quality improvement, or population health.</p>
+
+        <!-- ── INLINE PHOTO after mission bio ── -->
+        <div class="miss-inline-photo" style="margin-top:1.5rem;">
+          <img src="IMG_2853.jpeg"
+               alt="Volunteer during Homecoming at UNCG as an undergraduate giving flu shots"
+               onerror="this.parentElement.style.display='none';">
+          <div class="miss-inline-cap">Volunteer during Homecoming at UNCG as an undergraduate giving flu shots.</div>
+        </div>
+
       </div>
       <div class="vals rv d2">
         <div class="val-row"><div class="val-ic">💛</div><div><div class="vt">Compassionate Care</div><div class="vd">Based on Swanson's Theory of Caring, compassionate care encompasses a holistic and empathetic approach to patient care that emphasizes understanding, connection, and support.</div></div></div>
@@ -562,7 +634,7 @@ footer { background:#030712;padding:1.5rem 4.5rem;display:flex;justify-content:s
           </div>
         </div>
         <div class="scard">
-               <h4>Leadership Highlights</h4>
+          <h4>Leadership Highlights</h4>
           <ul>
             <li>Charge Nurse on a 30-bed heart failure progressive unit</li>
             <li>Preceptor for nurses and nursing students</li>
@@ -572,14 +644,13 @@ footer { background:#030712;padding:1.5rem 4.5rem;display:flex;justify-content:s
         </div>
         <!-- ── PORTFOLIO DOWNLOAD — under highlights ── -->
         <a href="Latara NMcGuire Nursing Portfolio.pdf" download class="sidebar-dl-btn">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download Portfolio
         </a>
       </div>
     </div>
   </div>
 </section>
- 
 
 <!-- ═══════════════════════════════════════════
      7. SKILLS — Competency Profile
@@ -608,7 +679,6 @@ footer { background:#030712;padding:1.5rem 4.5rem;display:flex;justify-content:s
           <div class="trow">
             <span class="chip">Epic</span>
             <span class="chip">Meditech</span>
-            
           </div>
         </div>
         <div class="ts">
@@ -751,15 +821,13 @@ footer { background:#030712;padding:1.5rem 4.5rem;display:flex;justify-content:s
           <span class="dl-ic">🌿</span> Open Presentation
         </button>
       </div>
- 
+
     </div>
   </div>
 </section>
- 
 
 <!-- ═══════════════════════════════════════════
      10. COMMUNITY — With Photo
-     ═══════════════════════════════════════════ -->
      ═══════════════════════════════════════════ -->
 <section class="comm-sec sec" id="community">
   <div class="ctr">
@@ -789,11 +857,11 @@ footer { background:#030712;padding:1.5rem 4.5rem;display:flex;justify-content:s
         <ul class="comm-list">
           <li><strong>MBA Graduate Capstone:</strong> Applied dual frameworks to operational analysis and strategic planning for an independent pharmacy — bridging clinical insight with healthcare business administration.</li>
         </ul>
-        <!-- Scholarly work image -->
+        <!-- ── SCHOLARLY WORK PHOTO ── -->
         <div class="scholarly-photo">
           <img src="IMG_2021.JPG"
-               alt="Caption to Work Image"
-               onerror="this.style.display='none'; this.nextElementSibling.style.removeProperty('display');">
+               alt="Scholarly Work"
+               onerror="this.style.display='none'; this.nextElementSibling.removeAttribute('hidden');">
           <div class="scholarly-photo-cap">Caption to Work Image</div>
         </div>
       </div>
@@ -826,7 +894,7 @@ footer { background:#030712;padding:1.5rem 4.5rem;display:flex;justify-content:s
 </section>
 
 <!-- ═══════════════════════════════════════════
-     12. CONTACT — with Resume Download
+     12. CONTACT — with Portfolio Download
      ═══════════════════════════════════════════ -->
 <section class="cont-sec sec" id="contact">
   <div class="ctr">
@@ -837,7 +905,7 @@ footer { background:#030712;padding:1.5rem 4.5rem;display:flex;justify-content:s
       <div class="cont-cards">
         <a href="mailto:lataramcguire@gmail.com" class="ccard"><span class="cc-ico">✉️</span><div class="cc-lbl">Email</div><div class="cc-val">lataramcguire@gmail.com</div></a>
         <div class="ccard"><span class="cc-ico">🎓</span><div class="cc-lbl">MSN/MBA</div><div class="cc-val">May 2026 · UNCG</div></div>
-        <a href="Latara_McGuire_Resume.pdf" download class="ccard"><span class="cc-ico">📄</span><div class="cc-lbl">Resume</div><div class="cc-val">Download PDF</div></a>
+        <a href="Latara NMcGuire Nursing Portfolio.pdf" download class="ccard"><span class="cc-ico">📄</span><div class="cc-lbl">Portfolio</div><div class="cc-val">Download PDF</div></a>
       </div>
       <div class="sig">
         <div class="sig-n">Latara McGuire</div>
@@ -874,6 +942,28 @@ if(skGrid)skObs.observe(skGrid);
 
 /* ── NAV SHRINK ── */
 window.addEventListener('scroll',()=>{const nav=document.getElementById('mNav');if(window.scrollY>80)nav.style.padding='.7rem 4rem';else nav.style.padding='1.2rem 4rem';});
+
+/* ── LIGHTBOX ── */
+function openLightbox(src, caption) {
+  const overlay = document.getElementById('lightboxOverlay');
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightboxImg').alt = caption;
+  document.getElementById('lightboxCap').textContent = caption;
+  overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(e) {
+  if (e.target === document.getElementById('lightboxOverlay')) {
+    document.getElementById('lightboxOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.getElementById('lightboxOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
 </script>
 
 </body>
