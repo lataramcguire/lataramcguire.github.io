@@ -7,22 +7,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;1,400;1,600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  /* ── NAVY BLUE PALETTE ── */
-  --deep:       #05091c;   /* darkest navy — hero bg, footer */
-  --dark:       #0a1230;   /* dark navy — philosophy, experience */
-  --mid:        #112050;   /* mid navy — cards on dark bg */
-  --navy:       #1a3268;   /* primary navy */
-  --blue:       #2557a7;   /* medium blue — accents */
-  --blue-lt:    #4a82cc;   /* lighter blue — eyebrow, sage equiv */
-  --sky:        #7ab4e8;   /* sky highlight */
-  --pearl:      #b8d0ef;   /* pearl blue — soft text */
-  --gold:       #d4aa70;   /* warm gold — stays for contrast */
-  --gold-lt:    #ead99f;   /* light gold */
-  --ivory:      #f4f7fc;   /* cool ivory bg */
-  --ivory-w:    #e9eff8;   /* warm-cool bg alt */
-  --bone:       #cddaee;   /* cool bone */
-  --text:       #0d1a2e;   /* near-black */
-  --muted:      #5a6b82;   /* cool muted */
+  --deep:       #05091c;
+  --dark:       #0a1230;
+  --mid:        #112050;
+  --navy:       #1a3268;
+  --blue:       #2557a7;
+  --blue-lt:    #4a82cc;
+  --sky:        #7ab4e8;
+  --pearl:      #b8d0ef;
+  --gold:       #d4aa70;
+  --gold-lt:    #ead99f;
+  --ivory:      #f4f7fc;
+  --ivory-w:    #e9eff8;
+  --bone:       #cddaee;
+  --text:       #0d1a2e;
+  --muted:      #5a6b82;
   --border-g:   rgba(212,170,112,0.22);
   --border-b:   rgba(74,130,204,0.28);
   --glass:      rgba(255,255,255,0.06);
@@ -66,10 +65,12 @@ nav { position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-conte
 .h-creds { font-family:'Source Serif 4',serif;font-size:1.05rem;color:rgba(255,255,255,.48);font-style:italic;letter-spacing:.04em;margin-bottom:1.5rem;opacity:0;animation:sR .8s .7s cubic-bezier(.22,.68,0,1.2) forwards; }
 .h-desc { font-size:.93rem;line-height:1.8;max-width:46ch;color:rgba(255,255,255,.58);margin-bottom:2.5rem;opacity:0;animation:sR .8s .9s cubic-bezier(.22,.68,0,1.2) forwards; }
 .h-btns { display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:sR .8s 1.1s cubic-bezier(.22,.68,0,1.2) forwards; }
-.btn-p { padding:.9rem 2.2rem;background:var(--gold);color:var(--deep);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;border:none;border-radius:2px;text-decoration:none;cursor:none;transition:all .3s; }
+.btn-p { padding:.9rem 2.2rem;background:var(--gold);color:var(--deep);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;border:none;border-radius:2px;text-decoration:none;cursor:none;transition:all .3s;display:inline-flex;align-items:center;gap:.6rem; }
 .btn-p:hover { background:var(--gold-lt);transform:translateY(-3px);box-shadow:0 12px 28px rgba(212,170,112,.35); }
-.btn-g { padding:.9rem 2.2rem;background:transparent;color:rgba(255,255,255,.75);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:400;border:1px solid rgba(255,255,255,.25);border-radius:2px;text-decoration:none;cursor:none;transition:all .3s; }
+.btn-g { padding:.9rem 2.2rem;background:transparent;color:rgba(255,255,255,.75);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:400;border:1px solid rgba(255,255,255,.25);border-radius:2px;text-decoration:none;cursor:none;transition:all .3s;display:inline-flex;align-items:center;gap:.6rem; }
 .btn-g:hover { border-color:var(--gold);color:var(--gold); }
+.btn-res { padding:.9rem 2.2rem;background:linear-gradient(135deg,var(--blue),var(--navy));color:#fff;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;border:none;border-radius:2px;text-decoration:none;cursor:none;transition:all .3s;display:inline-flex;align-items:center;gap:.6rem; }
+.btn-res:hover { background:linear-gradient(135deg,var(--blue-lt),var(--blue));transform:translateY(-3px);box-shadow:0 12px 28px rgba(37,87,167,.35); }
 .h-stats { display:flex;gap:2.5rem;margin-top:3rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.08);opacity:0;animation:fU .8s 1.3s ease forwards; }
 .stn { font-family:'Bodoni Moda',serif;font-size:2.8rem;font-weight:400;color:var(--gold);line-height:1; }
 .stl { font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:.25rem; }
@@ -104,6 +105,10 @@ h2.disp.wh em { color:var(--gold); }
 .d1 { transition-delay:.12s; }
 .d2 { transition-delay:.24s; }
 .d3 { transition-delay:.36s; }
+
+/* ── SECTION DIVIDER ── */
+.sec-div { width:100%;height:1px;background:linear-gradient(90deg,transparent 5%,var(--bone) 50%,transparent 95%);margin:0; }
+.sec-div.gold { background:linear-gradient(90deg,transparent,var(--gold),transparent); }
 
 /* ── VIDEO ── */
 .vid-sec { background:var(--dark);position:relative;overflow:hidden; }
@@ -185,7 +190,6 @@ h2.disp.wh em { color:var(--gold); }
 .cc-ab { font-family:'Bodoni Moda',serif;font-size:1.85rem;color:var(--dark);margin-bottom:.28rem; }
 .cc-nm { font-size:.78rem;color:var(--muted);line-height:1.45;margin-bottom:.5rem; }
 .cc-mt { font-size:.68rem;color:var(--blue);font-weight:600;letter-spacing:.04em;margin-bottom:.9rem; }
-.cc-slot { border:2px dashed rgba(10,18,48,.12);border-radius:4px;padding:.85rem;font-size:.67rem;color:rgba(10,18,48,.28);letter-spacing:.1em;text-transform:uppercase; }
 
 /* ── SKILLS ── */
 .sk-sec { background:var(--ivory); }
@@ -254,6 +258,16 @@ h2.disp.wh em { color:var(--gold); }
 .comm-list li::before { content:'→';position:absolute;left:0;color:var(--gold);font-weight:600; }
 .comm-list li strong { color:var(--dark);font-weight:500; }
 
+/* community photo gallery */
+.comm-gallery { display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1.5rem; }
+.comm-photo { width:100%;border-radius:6px;overflow:hidden;position:relative;border:1px solid rgba(10,18,48,.08);box-shadow:0 4px 16px rgba(10,18,48,.08); }
+.comm-photo img { width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease; }
+.comm-photo:hover img { transform:scale(1.03); }
+.comm-photo-cap { position:absolute;bottom:0;left:0;right:0;padding:.65rem 1rem;background:linear-gradient(transparent,rgba(5,9,28,.75));color:rgba(255,255,255,.9);font-size:.72rem;letter-spacing:.04em; }
+.comm-photo-fallback { width:100%;aspect-ratio:16/10;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--ivory-w);border:2px dashed rgba(10,18,48,.12);border-radius:6px;gap:.5rem; }
+.comm-photo-fallback span:first-child { font-size:2rem;opacity:.25; }
+.comm-photo-fallback span:last-child { font-size:.68rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase; }
+
 /* ── MUSIC ── */
 .music-sec { background:var(--deep);position:relative;overflow:hidden; }
 .music-sec::before { content:'♪';position:absolute;top:-2rem;right:4%;font-size:22rem;color:rgba(255,255,255,.025);font-family:serif;line-height:1;pointer-events:none; }
@@ -291,6 +305,7 @@ h2.disp.wh em { color:var(--gold); }
 .cc-ico { font-size:1.6rem;margin-bottom:.6rem;display:block; }
 .cc-lbl { font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.3rem; }
 .cc-val { font-size:.87rem;color:rgba(255,255,255,.8); }
+.cont-resume { margin:2rem 0 0;display:flex;justify-content:center; }
 .sig { margin-top:2.5rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.1); }
 .sig-n { font-family:'Bodoni Moda',serif;font-size:2.8rem;font-style:italic;font-weight:400;color:rgba(212,170,112,.42);margin-bottom:.4rem; }
 .sig-c { font-size:.69rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.25); }
@@ -330,28 +345,34 @@ footer { background:#030712;padding:1.5rem 4.5rem;display:flex;justify-content:s
   </div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#mission">Mission</a></li>
     <li><a href="#philosophy">Philosophy</a></li>
-    <li><a href="#issues">Issues</a></li>
     <li><a href="#credentials">Credentials</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#exemplars">Exemplars</a></li>
-    <li><a href="#music">Inspiration</a></li>
+    <li><a href="#community">Community</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Contact Me</a>
 </nav>
 
-<!-- ═══ HERO ═══ -->
+<!-- ═══════════════════════════════════════════
+     1. HERO — First Impression
+     ═══════════════════════════════════════════ -->
 <section class="hero" id="home">
   <div class="hero-bg"></div>
   <div class="hero-left">
     <div class="h-eye">Professional Nursing Portfolio</div>
     <h1 class="h-name">Latara N.<em>McGuire</em></h1>
     <div class="h-rule"></div>
-    <p class="h-creds"></p>
+    <p class="h-creds">BSN · MSN/MBA Candidate · CMSRN · MEDSURG-BC</p>
     <p class="h-desc">Dedicated to staff wellbeing, professional development, and quality outcomes for patients and the community.</p>
     <div class="h-btns">
       <a href="#about" class="btn-p">Meet Latara</a>
       <a href="#exemplars" class="btn-g">View Exemplars</a>
+      <a href="Latara_McGuire_Resume.pdf" download class="btn-res">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Resume
+      </a>
     </div>
     <div class="h-stats">
       <div><div class="stn">9</div><div class="stl">Years Clinical Experience</div></div>
@@ -362,7 +383,6 @@ footer { background:#030712;padding:1.5rem 4.5rem;display:flex;justify-content:s
   <div class="hero-right">
     <div class="h-frame">
       <div class="h-photo">
-        <!-- Profile Image -->
         <img src="IMG_2485.jpeg"
              alt="Latara N. McGuire — Professional Portrait"
              onerror="this.style.display='none'; document.getElementById('ph-fallback').style.display='flex';">
@@ -379,7 +399,9 @@ footer { background:#030712;padding:1.5rem 4.5rem;display:flex;justify-content:s
   </div>
 </section>
 
-<!-- ═══ ABOUT / VIDEO ═══ -->
+<!-- ═══════════════════════════════════════════
+     2. ABOUT / VIDEO — Personal Introduction
+     ═══════════════════════════════════════════ -->
 <section class="vid-sec sec" id="about">
   <div class="ctr">
     <div class="vid-grid">
@@ -396,7 +418,7 @@ footer { background:#030712;padding:1.5rem 4.5rem;display:flex;justify-content:s
         <p class="vid-q">"I pursued this journey not just to advance my career — but to transform the way healthcare serves our communities, our nurses, and the patients who trust us with their lives."</p>
         <div class="vtags">
           <span class="vtag">9 Years of Clinical Excellence</span>
-          <span class="vtag">Dual-degree Graduate Candidate</span>
+          <span class="vtag">Dual-Degree Graduate Candidate</span>
           <span class="vtag">Aspiring Nurse Leader</span>
           <span class="vtag">Community Health Advocate</span>
           <span class="vtag">Wellbeing Advocate</span>
@@ -406,7 +428,9 @@ footer { background:#030712;padding:1.5rem 4.5rem;display:flex;justify-content:s
   </div>
 </section>
 
-<!-- ═══ MISSION ═══ -->
+<!-- ═══════════════════════════════════════════
+     3. MISSION & VALUES
+     ═══════════════════════════════════════════ -->
 <section class="miss-sec sec" id="mission">
   <div class="ctr">
     <div class="eye rv">Personal Mission</div>
@@ -414,22 +438,64 @@ footer { background:#030712;padding:1.5rem 4.5rem;display:flex;justify-content:s
     <div class="miss-grid">
       <div class="rv d1">
         <p class="miss-q">"I advocate for data-driven and evidence-based practices, structured mentorship and leadership transition programs, ethical AI integration, and the interconnectedness of ambulatory and inpatient care — to improve community health outcomes for all."</p>
-        <p class="miss-body">Experienced registered nurse with nine years of diverse experience in acute care, ambulatory, and travel nursing. Demonstrated leadership in training staff, workflow coordination, and patient
-care management. Proven ability to adapt quickly, while maintaining patient safety and quality outcomes. Currently pursuing MSN/MBA with a focus in healthcare management. Seeking a nurse manager or leadership role in staff development, quality improvement, or population
-health</p>
+        <p class="miss-body">Experienced registered nurse with nine years of diverse experience in acute care, ambulatory, and travel nursing. Demonstrated leadership in training staff, workflow coordination, and patient care management. Proven ability to adapt quickly, while maintaining patient safety and quality outcomes. Currently pursuing MSN/MBA with a focus in healthcare management. Seeking a nurse manager or leadership role in staff development, quality improvement, or population health.</p>
       </div>
       <div class="vals rv d2">
-        <div class="val-row"><div class="val-ic"></div><div><div class="vt">Compassionate Care</div><div class="vd">Based on Swanson’s Theory of Caring, compassionate care encompasses a holistic and empathetic approach to patient care that emphasizes understanding, connection, and support.</div></div></div>
-        <div class="val-row"><div class="val-ic"></div><div><div class="vt">Authenticity</div><div class="vd">Authentic nurse leaders are self-aware. When leaders are genuine, staff are more likely to feel respected, supported, and psychologically safe, which strengthens teamwork, communication, and overall morale.</div></div></div>
-        <div class="val-row"><div class="val-ic"></div><div><div class="vt">Resiliency</div><div class="vd">Building resilience through structured residency programs develop confidence, competence, and coping strategies. Mentorship and resilience-building strategies support growth, prevent overwhelm, and promote long-term success. By intentionally cultivating resilience, healthcare organizations can strengthen leadership development, improve retention, and ensure a more stable and effective nursing workforce.</div></div></div>
-        <div class="val-row"><div class="val-ic"></div><div><div class="vt">Transparency</div><div class="vd">Transparency builds trust and open communication. Transparency also strengthens community trust by ensuring ethical practices, improving patient outcomes, and promoting confidence in healthcare systems.</div></div></div>
-        <div class="val-row"><div class="val-ic"></div><div><div class="vt">Accountability</div><div class="vd">Nursing-sensitive quality indicators and data dashboards that drive continuous improvement and organizational trust at every level.</div></div></div>
+        <div class="val-row"><div class="val-ic">💛</div><div><div class="vt">Compassionate Care</div><div class="vd">Based on Swanson's Theory of Caring, compassionate care encompasses a holistic and empathetic approach to patient care that emphasizes understanding, connection, and support.</div></div></div>
+        <div class="val-row"><div class="val-ic">✦</div><div><div class="vt">Authenticity</div><div class="vd">Authentic nurse leaders are self-aware. When leaders are genuine, staff are more likely to feel respected, supported, and psychologically safe, which strengthens teamwork, communication, and overall morale.</div></div></div>
+        <div class="val-row"><div class="val-ic">🛡️</div><div><div class="vt">Resiliency</div><div class="vd">Building resilience through structured residency programs develops confidence, competence, and coping strategies. Mentorship and resilience-building strategies support growth, prevent overwhelm, and promote long-term success.</div></div></div>
+        <div class="val-row"><div class="val-ic">🔍</div><div><div class="vt">Transparency</div><div class="vd">Transparency builds trust and open communication. It also strengthens community trust by ensuring ethical practices, improving patient outcomes, and promoting confidence in healthcare systems.</div></div></div>
+        <div class="val-row"><div class="val-ic">📊</div><div><div class="vt">Accountability</div><div class="vd">Nursing-sensitive quality indicators and data dashboards that drive continuous improvement and organizational trust at every level.</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ PHILOSOPHY ═══ -->
+<!-- ═══════════════════════════════════════════
+     4. CREDENTIALS — Right after mission for credibility
+     ═══════════════════════════════════════════ -->
+<section class="cred-sec sec" id="credentials">
+  <div class="ctr">
+    <div class="eye rv">Qualifications</div>
+    <h2 class="disp rv d1">Licensure, Education &amp; <em>Certifications</em></h2>
+    <div class="cred-grid">
+      <div class="cc rv">
+        <span class="cc-em">🎓</span>
+        <div class="cc-ab">MSN/MBA</div>
+        <div class="cc-nm">Master of Science in Nursing &amp; Master of Business Administration · Healthcare Management</div>
+        <div class="cc-mt">UNC Greensboro · Expected May 2026</div>
+      </div>
+      <div class="cc rv d1">
+        <span class="cc-em">📜</span>
+        <div class="cc-ab">BSN</div>
+        <div class="cc-nm">Bachelor of Science in Nursing</div>
+        <div class="cc-mt">UNC Greensboro · May 2017</div>
+      </div>
+      <div class="cc rv d2">
+        <span class="cc-em">📋</span>
+        <div class="cc-ab">NPD-BC</div>
+        <div class="cc-nm">Nursing Professional Development Certification</div>
+        <div class="cc-mt">ANCC · Anticipated June 2026</div>
+      </div>
+      <div class="cc rv">
+        <span class="cc-em">⭐</span>
+        <div class="cc-ab">CMSRN</div>
+        <div class="cc-nm">Certified Medical-Surgical Registered Nurse — MSNCB</div>
+        <div class="cc-mt">Active</div>
+      </div>
+      <div class="cc rv d1">
+        <span class="cc-em">⭐</span>
+        <div class="cc-ab">MEDSURG-BC</div>
+        <div class="cc-nm">Medical-Surgical Nursing Board Certified — ANCC</div>
+        <div class="cc-mt">Active</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     5. PHILOSOPHY — Deeper leadership thinking
+     ═══════════════════════════════════════════ -->
 <section class="phil-sec sec" id="philosophy">
   <div class="ctr">
     <div class="eye lt rv">How I Lead</div>
@@ -437,7 +503,7 @@ health</p>
     <p style="font-family:'Source Serif 4',serif;font-size:1rem;color:rgba(255,255,255,.6);line-height:1.8;max-width:72ch;margin:1.5rem 0 2.5rem;" class="rv d2">I pursued an MSN/MBA in Healthcare Management to lead, educate, and empower colleagues, patients, and my community — believing front-line nurses must be equipped with data and evidence-based tools to design patient-centered workflows across all care settings.</p>
     <div class="ptabs rv">
       <button class="ptab act" onclick="pTab(event,'pp1')">Core Pillars</button>
-      <button class="ptab" onclick="pTab(event,'pp2')">Interconnected Elements in Healthcare</button>
+      <button class="ptab" onclick="pTab(event,'pp2')">Interconnected Elements</button>
       <button class="ptab" onclick="pTab(event,'pp3')">Strategic Vision</button>
     </div>
     <div id="pp1" class="ppanel act">
@@ -468,7 +534,115 @@ health</p>
   </div>
 </section>
 
-<!-- ═══ CURRENT ISSUES ═══ -->
+<!-- ═══════════════════════════════════════════
+     6. EXPERIENCE — Career Timeline
+     ═══════════════════════════════════════════ -->
+<section class="exp-sec sec" id="experience">
+  <div class="ctr">
+    <div class="eye gd rv">Career Journey</div>
+    <h2 class="disp wh rv d1">Professional <em>Experience</em></h2>
+    <div class="exp-grid">
+      <div class="tl rv">
+        <div class="tli"><div class="tld">Feb 2025 – Present</div><div class="tlr">Registered Nurse — Medical-Surgical / Telemetry</div><div class="tlo">UNC Rex Holly Springs · Holly Springs, NC</div><div class="tltx">Nursing care for post-operative orthopedic, telemetry, and neurological patients. Coordinating interdisciplinary care plans with physicians, therapists, and case managers.</div><div class="tlcs"><span class="tlc">Epic EMR</span><span class="tlc">Telemetry</span><span class="tlc">Resource Nurse</span><span class="tlc">QI Initiatives</span></div></div>
+        <div class="tli"><div class="tld">Sep 2023 – Feb 2025</div><div class="tlr">Registered Nurse — Heart Failure Progressive Unit</div><div class="tlo">Moses H. Cone Memorial Hospital · Greensboro, NC</div><div class="tltx">Managed hemodynamically complex patients requiring telemetry surveillance, medication titration, and invasive procedure support. Served as charge nurse and preceptor for new employees.</div><div class="tlcs"><span class="tlc">Heart Failure</span><span class="tlc">Hemodynamic Monitoring</span><span class="tlc">Cardiac Cath</span><span class="tlc">Preceptor</span></div></div>
+        <div class="tli"><div class="tld">May 2023 – Aug 2023</div><div class="tlr">Travel RN — Trauma, Surgical &amp; Neurology</div><div class="tlo">Johns Hopkins Hospital · Baltimore, MD</div><div class="tltx">High-acuity care at a nationally ranked Level I Trauma Center across trauma surgery, general surgery, orthopedics, and neurology. Managed advanced wound care including wound VACs, hemovacs, and external fixators.</div><div class="tlcs"><span class="tlc">Level I Trauma</span><span class="tlc">Wound VAC</span><span class="tlc">Neurosurgery</span><span class="tlc">Academic Medical Center</span></div></div>
+        <div class="tli"><div class="tld">Sep 2019 – Dec 2020</div><div class="tlr">Registered Nurse — Ambulatory</div><div class="tlo">WakeMed Physician Practices – Urology · Raleigh, NC</div><div class="tltx">Telephone triage and inbasket management. Assisted with provider scheduling, nurse visit scheduling, and ordering clinic supplies. Assisted with cystoscopies, prostate biopsies, and vasectomies. Administered chemotherapy and hormonal therapies. Delivered care via Webex telemedicine. Trained new clinical staff.</div><div class="tlcs"><span class="tlc">Multi-Site Operations</span><span class="tlc">Oncology Meds</span><span class="tlc">Telemedicine</span><span class="tlc">Staff Training</span></div></div>
+        <div class="tli"><div class="tld">Nov 2018 – Sep 2019</div><div class="tlr">Registered Nurse — Neurology Intermediate Care</div><div class="tlo">WakeMed Health &amp; Hospitals · Raleigh, NC</div><div class="tltx">Specialized nursing care for stroke, seizure, and neurologically compromised patients. Managed insulin and heparin drip protocols, telemetry surveillance, and tracheostomy care. Participated in interdisciplinary rounds advocating for patient-centered care adjustments.</div><div class="tlcs"><span class="tlc">Neurology IMC</span><span class="tlc">Stroke Care</span><span class="tlc">Heparin Protocols</span><span class="tlc">Epic EMR</span></div></div>
+        <div class="tli"><div class="tld">Apr – Nov 2018</div><div class="tlr">Registered Nurse — Ambulatory</div><div class="tlo">Duke Private Diagnostic Clinic · Durham, NC</div><div class="tltx">Neurology patient triage and care coordination for epilepsy, MS, and movement disorders. Conducted spirometry and allergy skin testing; administered IM injections and immunotherapy protocols with anaphylaxis preparedness.</div><div class="tlcs"><span class="tlc">Neurology Ambulatory</span><span class="tlc">Immunotherapy</span></div></div>
+        <div class="tli"><div class="tld">Jul 2017 – Jun 2022 (with travel intervals)</div><div class="tlr">RN — Surgical/Neuro Care &amp; Travel Assignments</div><div class="tlo">UNC Rex · ECU Health North · Lewis Gale · Moses Cone (Travel)</div><div class="tltx">Post-operative bariatric, thoracic, craniotomy, and orthopedic surgical nursing at UNC Rex. Multiple travel assignments demonstrating clinical adaptability, cross-system EMR competency (Epic &amp; Meditech), and direct exposure to SDOH drivers of rural health disparities in eastern NC and VA.</div><div class="tlcs"><span class="tlc">Surgical Nursing</span><span class="tlc">Craniotomy</span><span class="tlc">Travel Nursing</span><span class="tlc">Rural Health</span><span class="tlc">Epic &amp; Meditech</span></div></div>
+      </div>
+      <div class="esb">
+        <div class="sph">
+          <img src="IMG_2485.jpeg"
+               alt="Latara N. McGuire"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="sph-fallback" style="display:none;">
+            <div class="sph-i">🖼️</div>
+            <div class="sph-t">Latara N. McGuire</div>
+          </div>
+        </div>
+        <div class="scard">
+          <h4>Leadership Highlights</h4>
+          <ul>
+            <li>Charge Nurse on a 30-bed heart failure progressive unit</li>
+            <li>Preceptor for nurses and nursing students</li>
+            <li>Recruitment &amp; Retention Committee</li>
+            <li>Assisted with planning and execution of Magnet designation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     7. SKILLS — Competency Profile
+     ═══════════════════════════════════════════ -->
+<section class="sk-sec sec" id="skills">
+  <div class="ctr">
+    <div class="eye rv">Competency Profile</div>
+    <h2 class="disp rv d1">Clinical &amp; Leadership <em>Skills</em></h2>
+    <div class="sk-grid">
+      <div class="sk-col rv" id="skGrid">
+        <h3>Core Competencies</h3>
+        <div class="bars">
+          <div><div class="btop"><span class="bnm">Nursing Care</span><span class="blv">Expert</span></div><div class="btrack"><div class="bfill" data-w="97"></div></div></div>
+          <div><div class="btop"><span class="bnm">Staff Training &amp; Precepting</span><span class="blv">Advanced</span></div><div class="btrack"><div class="bfill" data-w="92"></div></div></div>
+          <div><div class="btop"><span class="bnm">Workflow Management</span><span class="blv">Advanced</span></div><div class="btrack"><div class="bfill" data-w="90"></div></div></div>
+          <div><div class="btop"><span class="bnm">Interdisciplinary Collaboration</span><span class="blv">Advanced</span></div><div class="btrack"><div class="bfill" data-w="93"></div></div></div>
+          <div><div class="btop"><span class="bnm">Quality Improvement</span><span class="blv">Advanced</span></div><div class="btrack"><div class="bfill" data-w="88"></div></div></div>
+          <div><div class="btop"><span class="bnm">Patient Advocacy</span><span class="blv">Expert</span></div><div class="btrack"><div class="bfill" data-w="96"></div></div></div>
+          <div><div class="btop"><span class="bnm">Strategic Planning</span><span class="blv">Proficient</span></div><div class="btrack"><div class="bfill" data-w="82"></div></div></div>
+        </div>
+      </div>
+      <div class="sk-col rv d2">
+        <h3>Technical &amp; Systems</h3>
+        <div class="ts">
+          <div class="tcat">EMR Systems</div>
+          <div class="trow">
+            <span class="chip">Epic</span>
+            <span class="chip">Meditech</span>
+            <span class="chip">Athena</span>
+          </div>
+        </div>
+        <div class="ts">
+          <div class="tcat">Clinical Specialties</div>
+          <div class="trow">
+            <span class="chip">Med-Surg</span>
+            <span class="chip">Telemetry</span>
+            <span class="chip">Heart Failure</span>
+            <span class="chip">Neurology</span>
+            <span class="chip">Trauma</span>
+            <span class="chip">Ambulatory</span>
+          </div>
+        </div>
+        <div class="ts">
+          <div class="tcat">Leadership</div>
+          <div class="trow">
+            <span class="chip gd">Charge Nurse</span>
+            <span class="chip gd">Preceptor</span>
+            <span class="chip gd">Quality Improvement</span>
+            <span class="chip gd">Staff Development</span>
+            <span class="chip gd">Data Analytics</span>
+          </div>
+        </div>
+        <div class="ts">
+          <div class="tcat">Certifications</div>
+          <div class="trow">
+            <span class="chip">CMSRN</span>
+            <span class="chip">MEDSURG-BC</span>
+            <span class="chip">BLS</span>
+            <span class="chip">ACLS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     8. CURRENT ISSUES
+     ═══════════════════════════════════════════ -->
 <section class="iss-sec sec" id="issues">
   <div class="ctr">
     <div class="eye rv">The Landscape</div>
@@ -479,7 +653,7 @@ health</p>
       <div class="iss-item">
         <div class="iss-hdr" onclick="togIss(this)"><div class="iss-left"><span class="bdg bc">Critical</span><span class="iss-title">Nurse Staffing Crisis &amp; Burnout Epidemic</span></div><div class="iss-arr">▾</div></div>
         <div class="iss-body"><div class="iss-inner">
-          <div class="iss-txt"><p> High patient-to-nurse ratios, burnout, and workplace violence are driving experienced nurses from the profession at alarming rates, simultaneously eroding care quality, safety outcomes, and institutional financial stability.</p><p>Addressing this demands a dual strategy: immediate interventions like flexible scheduling and real-time staffing analytics alongside long-term investments in structured residency and leadership transition programs, well-being resources, and supportive work environments.</p><p> Participating in the recruitment and retention committee and serving as a preceptor across five health systems, I understand that retention is won or lost in the micro-stressors that accumulate long before a resignation letter is written.</p></div>
+          <div class="iss-txt"><p>High patient-to-nurse ratios, burnout, and workplace violence are driving experienced nurses from the profession at alarming rates, simultaneously eroding care quality, safety outcomes, and institutional financial stability.</p><p>Addressing this demands a dual strategy: immediate interventions like flexible scheduling and real-time staffing analytics alongside long-term investments in structured residency and leadership transition programs, well-being resources, and supportive work environments.</p><p>Participating in the recruitment and retention committee and serving as a preceptor across five health systems, I understand that retention is won or lost in the micro-stressors that accumulate long before a resignation letter is written.</p></div>
           <div class="iss-sb"><h4>Leadership Response</h4><ul><li>Real-time staffing analytics and ratio dashboards</li><li>Peer support networks and burnout screening</li><li>Flexible and self-scheduling models</li><li>Structured residency and transition programs</li><li>Recruitment and retention committee leadership</li><li>Authentic career ladders from bedside to management</li></ul></div>
         </div></div>
       </div>
@@ -495,7 +669,7 @@ health</p>
       <div class="iss-item">
         <div class="iss-hdr" onclick="togIss(this)"><div class="iss-left"><span class="bdg be">Equity</span><span class="iss-title">Health Disparities, Social Determinants &amp; Rural Community Health</span></div><div class="iss-arr">▾</div></div>
         <div class="iss-body"><div class="iss-inner">
-          <div class="iss-txt"><p>Racial, socioeconomic, and geographic health disparities remain among the most persistent challenges in American healthcare. My travel nursing experience at ECU Health North in rural eastern North Carolina gave me direct exposure to how social determinants drive emergency utilization, care fragmentation, and preventable hospitalizations.</p><p>Nursing leaders are uniquely positioned to drive equity-centered care. Integrating SDOH screening into routine protocols and connecting findings to community resources is an evidence-based strategy for addressing upstream drivers of disparity. </p><p>Quality metrics must stratify by race, income, and geography — making disparities visible and holding systems genuinely accountable for measurable improvement over time.</p></div>
+          <div class="iss-txt"><p>Racial, socioeconomic, and geographic health disparities remain among the most persistent challenges in American healthcare. My travel nursing experience at ECU Health North in rural eastern North Carolina gave me direct exposure to how social determinants drive emergency utilization, care fragmentation, and preventable hospitalizations.</p><p>Nursing leaders are uniquely positioned to drive equity-centered care. Integrating SDOH screening into routine protocols and connecting findings to community resources is an evidence-based strategy for addressing upstream drivers of disparity.</p><p>Quality metrics must stratify by race, income, and geography — making disparities visible and holding systems genuinely accountable for measurable improvement over time.</p></div>
           <div class="iss-sb"><h4>Leadership Response</h4><ul><li>SDOH screening protocols in all care settings</li><li>Community health worker partnerships</li><li>Equity-stratified quality reporting</li><li>Cultural humility training as standard practice</li><li>Ambulatory-acute care coordination for rural populations</li><li>Community needs assessments tied to resource deployment</li></ul></div>
         </div></div>
       </div>
@@ -511,7 +685,7 @@ health</p>
       <div class="iss-item">
         <div class="iss-hdr" onclick="togIss(this)"><div class="iss-left"><span class="bdg bs">Systems</span><span class="iss-title">Telehealth Expansion, Readmissions &amp; Ambulatory-Inpatient Integration</span></div><div class="iss-arr">▾</div></div>
         <div class="iss-body"><div class="iss-inner">
-          <div class="iss-txt"><p> Nursing leaders must now design workflows, quality metrics, and competency frameworks for hybrid care models.</p><p>The strategic opportunity lies in treating ambulatory and inpatient care as a single integrated system — using ambulatory data to predict and prevent hospitalizations, and inpatient insights to design better community follow-up.</p><p></p></div>
+          <div class="iss-txt"><p>Nursing leaders must now design workflows, quality metrics, and competency frameworks for hybrid care models.</p><p>The strategic opportunity lies in treating ambulatory and inpatient care as a single integrated system — using ambulatory data to predict and prevent hospitalizations, and inpatient insights to design better community follow-up.</p></div>
           <div class="iss-sb"><h4>Leadership Response</h4><ul><li>Telehealth nursing workflow design and protocols</li><li>Ambulatory nursing-sensitive quality indicators</li><li>Shared care coordination across care settings</li><li>Predictive analytics for readmission risk</li><li>Virtual visit nursing competency training</li><li>Financial modeling of transitional care value</li></ul></div>
         </div></div>
       </div>
@@ -520,89 +694,9 @@ health</p>
   </div>
 </section>
 
-<!-- ═══ CREDENTIALS ═══ -->
-<section class="cred-sec sec" id="credentials">
-  <div class="ctr">
-    <div class="eye rv">Qualifications</div>
-    <h2 class="disp rv d1">Licensure, Education &amp; <em>Certifications</em></h2>
-    <div class="cred-grid">
-      <div class="cc rv"><span class="cc-em"><</span><div class="cc-ab">MSN/MBAdiv><div class="cc-nm">Master of Science in Nursing and Master of Business Administration· Healthcare Management</div><div class="cc-mt">UNC Greensboro · Expected May 2026</div></div>
-  
-      <div class="cc rv d2"><span class="cc-em"></span><div class="cc-ab">BSN</div><div class="cc-nm">Bachelor of Science in Nursing</div><div class="cc-mt">UNC Greensboro · May 2017</div></div>
-      <div class="cc rv"><span class="cc-em"></span><div class="cc-ab">Anticipated Jnue 2026</div><div class="cc-nm">Nursing Professional Development Certification</div><div class="cc-mt">ANCC</div></div>
-      <div class="cc rv d1"><span class="cc-em"></span><div class="cc-ab">CMSRN</div><div class="cc-nm">Certified Medical-Surgical Registered Nurse — MSNCB</div><div class="cc-mt">/div></div>
-      <div class="cc rv d2"><span class="cc-em"></span><div class="cc-ab">MEDSURG-BC</div><div class="cc-nm">Medical-Surgical Nursing Board Certified — ANCC</div><div class="cc-mt">/div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ SKILLS ═══ -->
-<section class="sk-sec sec" id="skills">
-  <div class="ctr">
-    <div class="eye rv">Competency Profile</div>
-    <h2 class="disp rv d1">Clinical &amp; Leadership <em>Skills</em></h2>
-    <div class="sk-grid">
-      <div class="sk-col rv" id="skGrid">
-        <h3>Core Competencies</h3>
-        <div class="bars">
-          <div><div class="btop"><span class="bnm">Nursing care </span><span 
-          <div><div class="btop"><span class="bnm">Staff Training</span><span
-          <div><div class="btop"><span class="bnm">Workflow Management</span><span 
-          <div><div class="btop"><span class="bnm">Interdisiciplinary Collaboration</span><span 
-          <div><div class="btop"><span class="bnm">Quality Improvement</span><span 
-          <div><div class="btop"><span class="bnm">Patient Advocacy</span><span 
-          
-          <div><div class="btop"><span class="bnm">Strategic Planning</span><span 
-        </div>
-      </div>
-      <div class="sk-col rv d2">
-      
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ EXPERIENCE ═══ -->
-<section class="exp-sec sec" id="experience">
-  <div class="ctr">
-    <div class="eye gd rv">Career Journey</div>
-    <h2 class="disp wh rv d1">Professional <em>Experience</em></h2>
-    <div class="exp-grid">
-      <div class="tl rv">
-        <div class="tli"><div class="tld">Feb 2025 – Present</div><div class="tlr">Registered Nurse — Medical-Surgical / Telemetry</div><div class="tlo">UNC Rex Holly Springs · Holly Springs, NC</div><div class="tltx"> Nursing care for post-operative orthopedic, telemetry, and neurological patients. Coordinating interdisciplinary care plans with physicians,therapists, and case managers. </div><div class="tlcs"><span class="tlc">Epic EMR</span><span class="tlc">Telemetry</span><span class="tlc">Resource Nurse</span><span class="tlc">QI Initiatives</span></div></div>
-        <div class="tli"><div class="tld">Sep 2023 – Feb 2025</div><div class="tlr">Registered Nurse — Heart Failure Progressive Unit</div><div class="tlo">Moses H. Cone Memorial Hospital · Greensboro, NC</div><div class="tltx">Managed hemodynamically complex patients requiring telemetry surveillance, medication titration, and invasive procedure support. Served as charge nurse and preceptor for new employees.</div><div class="tlcs"><span class="tlc">Heart Failure</span><span class="tlc">Hemodynamic Monitoring</span><span class="tlc">Cardiac Cath</span><span class="tlc">Preceptor</span></div></div>
-        <div class="tli"><div class="tld">May 2023 – Aug 2023</div><div class="tlr">Travel RN — Trauma, Surgical &amp; Neurology</div><div class="tlo">Johns Hopkins Hospital · Baltimore, MD</div><div class="tltx">High-acuity care at a nationally ranked Level I Trauma Center across trauma surgery, general surgery, orthopedics, and neurology. Managed advanced wound care including wound VACs, hemovacs, and external fixators. </div><div class="tlcs"><span class="tlc">Level I Trauma</span><span class="tlc">Wound VAC</span><span class="tlc">Neurosurgery</span><span class="tlc">Academic Medical Center</span></div></div>
-        <div class="tli"><div class="tld">Sep 2019 – Dec 2020</div><div class="tlr">Registered Nurse — Ambulatory </div><div class="tlo">WakeMed Physician Practices- Urology · Raleigh, NC</div><div class="tltx">Experience with telephone triage and inbasket. Assisted with managing provider scheduling, nurse visit scheduling, and ordering clinic supplies. Assisted with cystoscopies, prostate biopsies, and vasectomies. Administered chemotherapy and hormonal therapies. Delivered care via Webex telemedicine.Trained new clinical staff.</div><div class="tlcs"><span class="tlc">Multi-Site Operations</span><span class="tlc">Oncology Meds</span><span class="tlc">Telemedicine</span><span class="tlc">Staff Training</span></div></div>
-        <div class="tli"><div class="tld">Nov 2018 – Sep 2019</div><div class="tlr">Registered Nurse — Neurology Intermediate Care</div><div class="tlo">WakeMed Health &amp; Hospitals · Raleigh, NC</div><div class="tltx">Specialized nursing care for stroke, seizure, and neurologically compromised patients. Managed insulin and heparin drip protocols, telemetry surveillance, and tracheostomy care. Participated in interdisciplinary rounds advocating for patient-centered care adjustments.</div><div class="tlcs"><span class="tlc">Neurology IMC</span><span class="tlc">Stroke Care</span><span class="tlc">Heparin Protocols</span><span class="tlc">Epic EMR</span></div></div>
-        <div class="tli"><div class="tld">Apr – Nov 2018</div><div class="tlr">Registered Nurse — Ambulatory </div><div class="tlo">Duke Private Diagnostic Clinic · Durham, NC</div><div class="tltx">Neurology patient triage and care coordination for epilepsy, MS, and movement disorders. Conducted spirometry and allergy skin testing; administered IM injections and immunotherapy protocols with anaphylaxis preparedness.</div><div class="tlcs"><span class="tlc">Neurology Ambulatory</span><span  class="tlc">Immunotherapy</span></div></div>
-        <div class="tli"><div class="tld">Jul 2017 – Jun 2022 (with travel intervals)</div><div class="tlr">RN — Surgical/Neuro Care &amp; Travel Assignments</div><div class="tlo">UNC Rex · ECU Health North · Lewis Gale · Moses Cone (Travel)</div><div class="tltx">Post-operative bariatric, thoracic, craniotomy, and orthopedic surgical nursing at UNC Rex. Multiple travel assignments demonstrating clinical adaptability, cross-system EMR competency (Epic &amp; Meditech), and direct exposure to SDOH drivers of rural health disparities in eastern NC and VA.</div><div class="tlcs"><span class="tlc">Surgical Nursing</span><span class="tlc">Craniotomy</span><span class="tlc">Travel Nursing</span><span class="tlc">Rural Health</span><span class="tlc">Epic &amp; Meditech</span></div></div>
-      </div>
-      <div class="esb">
-        <!-- Profile photo in sidebar too -->
-        <div class="sph">
-          <img src="IMG_2485.jpeg"
-               alt="Latara N. McGuire"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="sph-fallback" style="display:none;">
-            <div class="sph-i">🖼️</div>
-            <div class="sph-t">Latara N. McGuire</div>
-          </div>
-        </div>
-        <div class="scard">
-          <h4>Leadership Highlights</h4>
-          <ul>
-            <li>Charge Nurse on a 30 bed heart failure progressive unit</li>
-            <li>Preceptor for nurses and nursing students </li>
-            <li>Recruitment &amp; Retention Committee</li>
-            <lil> Assisted with planning and execution of Magnet designation </lil>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ EXEMPLARS — OPEN IN NEW TAB ═══ -->
+<!-- ═══════════════════════════════════════════
+     9. EXEMPLARS — Clinical Practice
+     ═══════════════════════════════════════════ -->
 <section class="ex-sec sec" id="exemplars">
   <div class="ctr">
     <div class="eye rv">Clinical Practice</div>
@@ -645,10 +739,10 @@ health</p>
 
       <div class="exc rv d1">
         <div class="exn">04</div>
-        <div class="exs">Well-being advocate </div>
-        <div class="ext"> Worksite Health Promotion &amp; Graduate level preparation </div>
-        <div class="exb">An exemplar from graduate level course in public health worksite health promotion </div>
-        <div class="extags"><span class="extag">Worksite Health Promotion</span><span class="extag">Well-being advocate</span><span class="extag">research</span><span class="extag">healthcare</span></div>
+        <div class="exs">Well-Being Advocate</div>
+        <div class="ext">Worksite Health Promotion &amp; Graduate-Level Preparation</div>
+        <div class="exb">An exemplar from a graduate-level course in public health worksite health promotion, demonstrating commitment to employee wellness and population health strategies.</div>
+        <div class="extags"><span class="extag">Worksite Health Promotion</span><span class="extag">Well-Being Advocate</span><span class="extag">Research</span><span class="extag">Healthcare</span></div>
         <div class="ex-ph">📝 &nbsp; Clinical narrative in progress</div>
       </div>
 
@@ -656,18 +750,31 @@ health</p>
   </div>
 </section>
 
-<!-- ═══ COMMUNITY & RESEARCH ═══ -->
+<!-- ═══════════════════════════════════════════
+     10. COMMUNITY — With Photo
+     ═══════════════════════════════════════════ -->
 <section class="comm-sec sec" id="community">
   <div class="ctr">
     <div class="eye rv">Impact Beyond the Bedside</div>
     <h2 class="disp rv d1">Community Engagement &amp; <em>Scholarly Contributions</em></h2>
     <div class="comm-grid">
       <div class="comm-card rv">
-        <h3>Community </h3>
+        <h3>Community Service</h3>
         <ul class="comm-list">
-          <li><strong>Legacy Center Church Medical Team </strong> </li>
-      
+          <li><strong>Legacy Center Church Medical Team</strong> — Volunteering medical expertise through the church medical team, providing health education, screenings, and first-aid support to community members and congregation events.</li>
         </ul>
+        <div class="comm-gallery">
+          <div class="comm-photo">
+            <img src="IMG_2386.jpeg"
+                 alt="Latara McGuire — Legacy Center Church Medical Team community service"
+                 onerror="this.parentElement.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';">
+            <div class="comm-photo-cap">Legacy Center Church — Medical Team Community Service</div>
+          </div>
+          <div class="comm-photo-fallback" style="display:none;">
+            <span>📷</span>
+            <span>IMG_2386.jpeg — Community Service</span>
+          </div>
+        </div>
       </div>
       <div class="comm-card rv d2">
         <h3>Research &amp; Scholarly Work</h3>
@@ -679,7 +786,9 @@ health</p>
   </div>
 </section>
 
-<!-- ═══ MUSIC ═══ -->
+<!-- ═══════════════════════════════════════════
+     11. MUSIC — Inspiration
+     ═══════════════════════════════════════════ -->
 <section class="music-sec sec" id="music">
   <div class="ctr">
     <div class="music-grid">
@@ -692,7 +801,8 @@ health</p>
       </div>
       <div class="rv d2">
         <div class="yt-wrap">
-          <iframe src="https://www.youtube.com/watch?v=yI9LQKvrVcQ&list=RDyI9LQKvrVcQ&start_radio=1" title="Inspiration Music — Latara McGuire Portfolio" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div style="position:absolute;top:0;left:0;width:100%;height:100%;"></div>
+          <iframe src="https://www.youtube.com/embed/yI9LQKvrVcQ?list=RDyI9LQKvrVcQ" title="Inspiration Music — Latara McGuire Portfolio" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="yt-lbl"><div class="yt-dot"></div>Playing via YouTube · Use player controls for volume</div>
       </div>
@@ -700,9 +810,9 @@ health</p>
   </div>
 </section>
 
-
-
-<!-- ═══ CONTACT ═══ -->
+<!-- ═══════════════════════════════════════════
+     12. CONTACT — with Resume Download
+     ═══════════════════════════════════════════ -->
 <section class="cont-sec sec" id="contact">
   <div class="ctr">
     <div class="cont-in">
@@ -710,10 +820,9 @@ health</p>
       <h2 class="disp wh" style="text-align:center;margin-bottom:.5rem;">Ready to <em>Lead Together</em></h2>
       <p style="color:rgba(255,255,255,.44);font-size:.9rem;margin-top:.75rem;">Open to nursing management, director-level, and collaborative healthcare leadership opportunities.</p>
       <div class="cont-cards">
-    
         <a href="mailto:lataramcguire@gmail.com" class="ccard"><span class="cc-ico">✉️</span><div class="cc-lbl">Email</div><div class="cc-val">lataramcguire@gmail.com</div></a>
-        
         <div class="ccard"><span class="cc-ico">🎓</span><div class="cc-lbl">Graduating</div><div class="cc-val">May 2026 · UNCG</div></div>
+        <a href="Latara_McGuire_Resume.pdf" download class="ccard"><span class="cc-ico">📄</span><div class="cc-lbl">Resume</div><div class="cc-val">Download PDF</div></a>
       </div>
       <div class="sig">
         <div class="sig-n">Latara McGuire</div>
@@ -728,6 +837,29 @@ health</p>
   <div class="ft">lataramcguire@gmail.com</div>
 </footer>
 
+<script>
+/* ── CURSOR ── */
+const cD=document.getElementById('cD'),cR=document.getElementById('cR');
+document.addEventListener('mousemove',e=>{cD.style.left=e.clientX+'px';cD.style.top=e.clientY+'px';cR.style.left=e.clientX+'px';cR.style.top=e.clientY+'px';});
+
+/* ── SCROLL REVEAL ── */
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('up')})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+/* ── PHILOSOPHY TABS ── */
+function pTab(e,id){document.querySelectorAll('.ptab').forEach(t=>t.classList.remove('act'));e.currentTarget.classList.add('act');document.querySelectorAll('.ppanel').forEach(p=>p.classList.remove('act'));document.getElementById(id).classList.add('act');}
+
+/* ── ISSUES ACCORDION ── */
+function togIss(hdr){const item=hdr.closest('.iss-item'),body=item.querySelector('.iss-body');if(item.classList.contains('open')){body.style.maxHeight=0;item.classList.remove('open');}else{document.querySelectorAll('.iss-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.iss-body').style.maxHeight=0;});body.style.maxHeight=body.scrollHeight+'px';item.classList.add('open');}}
+
+/* ── SKILL BARS ── */
+const skObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.bfill').forEach(b=>{b.style.width=b.dataset.w+'%';});skObs.unobserve(e.target);}})},{threshold:.3});
+const skGrid=document.getElementById('skGrid');
+if(skGrid)skObs.observe(skGrid);
+
+/* ── NAV SHRINK ── */
+window.addEventListener('scroll',()=>{const nav=document.getElementById('mNav');if(window.scrollY>80)nav.style.padding='.7rem 4rem';else nav.style.padding='1.2rem 4rem';});
+</script>
 
 </body>
 </html>
