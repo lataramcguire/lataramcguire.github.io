@@ -74,7 +74,7 @@ nav { position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-conte
 .h-stats { display:flex;gap:2.5rem;margin-top:3rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.08);opacity:0;animation:fU .8s 1.3s ease forwards; }
 .stn { font-family:'Bodoni Moda',serif;font-size:2.8rem;font-weight:400;color:var(--gold);line-height:1; }
 .stl { font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:.25rem; }
-.hero-right { position:relative;display:flex;align-items:flex-end;justify-content:center;opacity:0;animation:fI 1.4s .5s ease forwards; }
+.hero-right { position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;opacity:0;animation:fI 1.4s .5s ease forwards; }
 .h-frame { width:72%;max-width:420px;align-self:flex-end;aspect-ratio:3/4;position:relative; }
 .h-photo { width:100%;height:100%;border:1px solid var(--border-g);border-bottom:none;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(160deg,rgba(37,87,167,.3) 0%,rgba(5,9,28,.85) 100%); }
 .h-photo img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;display:block; }
@@ -85,6 +85,10 @@ nav { position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-conte
 .h-badge { position:absolute;bottom:-1px;left:0;right:0;background:linear-gradient(90deg,var(--mid),var(--blue));padding:.9rem 1.5rem;display:flex;justify-content:space-between;align-items:center;z-index:2; }
 .hb-t { font-size:.71rem;color:rgba(255,255,255,.85);letter-spacing:.07em; }
 .hb-d { width:8px;height:8px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite; }
+.h-frame-second { width:72%;max-width:420px;align-self:center;margin-top:1.5rem;border:1px solid var(--border-g);border-radius:4px;overflow:hidden;background:linear-gradient(160deg,rgba(37,87,167,.3) 0%,rgba(5,9,28,.85) 100%);opacity:0;animation:fI 1.4s .8s ease forwards; }
+.h-photo-second { width:100%;aspect-ratio:4/3;overflow:hidden; }
+.h-photo-second img { width:100%;height:100%;object-fit:cover;object-position:center;display:block; }
+.h-second-cap { padding:.55rem .9rem;font-size:.68rem;letter-spacing:.06em;color:rgba(255,255,255,.55);background:rgba(5,9,28,.5);border-top:1px solid var(--border-g);text-align:center;font-style:italic; }
 
 /* ── SHARED ── */
 .sec { padding:7rem 0; }
@@ -459,6 +463,14 @@ footer { background:#030712;padding:1.5rem 4.5rem;display:flex;justify-content:s
         <div class="hb-d"></div>
       </div>
     </div>
+    <div class="h-frame-second">
+      <div class="h-photo-second">
+        <img src="IMG_2945.jpeg"
+             alt="Latara N. McGuire"
+             onerror="this.closest('.h-frame-second').style.display='none';">
+      </div>
+      <div class="h-second-cap">Celebrating the journey</div>
+    </div>
   </div>
 </section>
 
@@ -624,6 +636,18 @@ footer { background:#030712;padding:1.5rem 4.5rem;display:flex;justify-content:s
         <div class="tli"><div class="tld">Jul 2017 – Jun 2022 (with travel intervals)</div><div class="tlr">RN — Surgical/Neuro Care &amp; Travel Assignments</div><div class="tlo">UNC Rex · ECU Health North · Lewis Gale · Moses Cone (Travel)</div><div class="tltx">Post-operative bariatric, thoracic, craniotomy, and orthopedic surgical nursing at UNC Rex. Multiple travel assignments demonstrating clinical adaptability, cross-system EMR competency (Epic &amp; Meditech), and direct exposure to SDOH drivers of rural health disparities in eastern NC and VA.</div><div class="tlcs"><span class="tlc">Surgical Nursing</span><span class="tlc">Craniotomy</span><span class="tlc">Travel Nursing</span><span class="tlc">Rural Health</span><span class="tlc">Epic &amp; Meditech</span></div></div>
       </div>
       <div class="esb">
+        <div class="sph">
+          <img src="blue background graduation 2026.jpeg"
+               alt="Latara N. McGuire — MSN/MBA graduation portrait"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="sph-fallback" style="display:none;">
+            <div class="sph-i">🎓</div>
+            <div class="sph-t">Class of 2026</div>
+          </div>
+        </div>
+        <div class="scard" style="padding:.7rem 1.1rem;">
+          <div style="font-size:.72rem;color:rgba(255,255,255,.5);font-style:italic;text-align:center;line-height:1.4;">MSN/MBA Candidate, Class of 2026 — UNC Greensboro</div>
+        </div>
         <div class="sph">
           <img src="Picture1 copy.jpg"
                alt="Latara N. McGuire"
@@ -906,6 +930,7 @@ footer { background:#030712;padding:1.5rem 4.5rem;display:flex;justify-content:s
         <a href="mailto:lataramcguire@gmail.com" class="ccard"><span class="cc-ico">✉️</span><div class="cc-lbl">Email</div><div class="cc-val">lataramcguire@gmail.com</div></a>
         <div class="ccard"><span class="cc-ico">🎓</span><div class="cc-lbl">MSN/MBA</div><div class="cc-val">May 2026 · UNCG</div></div>
         <a href="Latara NMcGuire Nursing Portfolio.pdf" download class="ccard"><span class="cc-ico">📄</span><div class="cc-lbl">Portfolio</div><div class="cc-val">Download PDF</div></a>
+        <a href="Latara NMcGuire Nursing Portfolio.docx" download class="ccard"><span class="cc-ico">📝</span><div class="cc-lbl">Portfolio</div><div class="cc-val">Download Word</div></a>
       </div>
       <div class="sig">
         <div class="sig-n">Latara McGuire</div>
